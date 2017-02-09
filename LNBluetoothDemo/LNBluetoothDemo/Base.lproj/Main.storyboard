@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="koR-d7-hQG">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drY-Hr-FJc">
+                                <state key="normal" title="检测蓝牙状态"/>
+                                <connections>
+                                    <action selector="checkBLEStatusAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="ONc-oJ-7Md"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JF-5t-mo5">
+                                <state key="normal" title="开始扫描"/>
+                                <connections>
+                                    <action selector="startScanAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="sHk-FQ-hrY"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nE4-7p-Gqp">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nE4-7p-Gqp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="8TF-QD-doj"/>
+                            <constraint firstItem="nE4-7p-Gqp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DvL-MZ-0hX"/>
+                            <constraint firstItem="8JF-5t-mo5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="92.5" id="GgQ-aq-pb8"/>
+                            <constraint firstItem="8JF-5t-mo5" firstAttribute="centerY" secondItem="drY-Hr-FJc" secondAttribute="centerY" id="Kgb-9O-Otg"/>
+                            <constraint firstItem="drY-Hr-FJc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-98.5" id="O8D-Vk-1X6"/>
+                            <constraint firstItem="nE4-7p-Gqp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="55" id="iNk-ol-IcJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="drY-Hr-FJc" secondAttribute="bottom" constant="73" id="jd6-FI-TAq"/>
+                            <constraint firstItem="8JF-5t-mo5" firstAttribute="top" secondItem="nE4-7p-Gqp" secondAttribute="bottom" constant="52" id="zic-gY-lrI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5lv-Mu-B0C"/>
+                    <connections>
+                        <outlet property="peripheralTableList" destination="nE4-7p-Gqp" id="KxH-W0-VEv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="37.331334332833585"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KZL-B9-iLG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="koR-d7-hQG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FMc-OW-sLn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qaQ-t3-UDf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SjM-EL-i78" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109.59999999999999" y="691.304347826087"/>
+        </scene>
+    </scenes>
+</document>
